@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <style>
+        .container {
+            position: fixed;
+            inset: 0px;
+            width: 12rem;
+            height: 5rem;
+            max-width: 100vw;
+            max-height: 100dvh;
+            margin: auto;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form action="05_upload.php/" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploadFile" id="uploadFile">
+            <br><br>
+            <button type="submit" value="upload">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
