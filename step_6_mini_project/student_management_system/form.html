@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Student/Teacher Form</title>
+</head>
+<body>
+  <h2>Give Information </h2>
+  <form action="process.php" method="post">
+    <label>Name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" required><br><br>
+
+    <label>Type:</label>
+    <select name="type" required>
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+    </select><br><br>
+
+    <!-- Student Input -->
+    <div id="studentFields">
+      <label>Roll:</label>
+      <input type="number" name="roll"><br><br>
+      <label>GPA:</label>
+      <input type="text" name="gpa"><br><br>
+    </div>
+
+    <!-- Teacher Input -->
+    <div id="teacherFields">
+      <label>Subject:</label>
+      <input type="text" name="subject"><br><br>
+      <label>Salary:</label>
+      <input type="number" name="salary"><br><br>
+    </div>
+
+    <button type="submit">submit</button>
+  </form>
+
+  <script>
+    const typeSelect = document.querySelector('select[name="type"]');
+    const studentFields = document.getElementById("studentFields");
+    const teacherFields = document.getElementById("teacherFields");
+
+    function toggleFields() {
+      if (typeSelect.value === "student") {
+        studentFields.style.display = "block";
+        teacherFields.style.display = "none";
+      } else {
+        studentFields.style.display = "none";
+        teacherFields.style.display = "block";
+      }
+    }
+
+    typeSelect.addEventListener("change", toggleFields);
+    toggleFields();
+  </script>
+</body>
+</html>
